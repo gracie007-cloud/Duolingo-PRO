@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Duolingo PRO
 // @namespace    http://duolingopro.net
-// @version      3.1BETA.02
-// @description  The fastest Duolingo XP gainer, now with Gems. Working as of September 2025.
+// @version      3.1BETA.02.1
+// @description  The fastest Duolingo XP gainer, working as of October 2025.
 // @author       anonymousHackerIV
 // @match        https://*.duolingo.com/*
 // @match        https://*.duolingo.cn/*
@@ -12,12 +12,12 @@
 
 let storageLocal;
 let storageSession;
-let versionNumber = "01";
-let storageLocalVersion = "3102";
-let storageSessionVersion = "3102";
-let versionName = "BETA.02";
-let versionFull = "3.1BETA.02";
-let versionFormal = "3.1 BETA.02";
+let versionNumber = "02.1";
+let storageLocalVersion = "06";
+let storageSessionVersion = "06";
+let versionName = "BETA.02.1";
+let versionFull = "3.1BETA.02.1";
+let versionFormal = "3.1 BETA.02.1";
 let serverURL = "https://www.duolingopro.net";
 let apiURL = "https://api.duolingopro.net";
 let greasyfork = true;
@@ -56,6 +56,7 @@ if (localStorage.getItem("DLP_Local_Storage") == null || JSON.parse(localStorage
             "anonymousUsageData": alpha,
             "solveSpeed": 0.9
         },
+        "chats": [],
         "notifications": [
             {
                 "id": "0001"
@@ -1066,6 +1067,81 @@ HTML2 = `
             </div>
         </div>
 
+
+        <div class="DLP_Main_Box_Divider" id="DLP_Main_Box_Divider_11_ID" style="display: none;">
+            <div class="DLP_VStack_8">
+                <div class="DLP_HStack_Auto_Top DLP_NoSelect">
+                    <div id="DLP_Universal_Back_1_Button_1_ID" class="DLP_HStack_4 DLP_Hover_1">
+                        <p class="DLP_Text_Style_2" style="font-size: 20px; background: url(${serverURL}/static/images/flow/primary/512/light.png) lightgray 0% / cover no-repeat; background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">􀯶</p>
+                        <p class="DLP_Text_Style_2" style="background: url(${serverURL}/static/images/flow/primary/512/light.png) lightgray 50% / cover no-repeat; background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Support</p>
+                    </div>
+                    <p class="DLP_Text_Style_1" style="font-size: 14px; background: url(${serverURL}/static/images/flow/secondary/512/light.png) lightgray 50% / cover no-repeat; background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${versionName}</p>
+                </div>
+
+                <div class="DLP_VStack_8" style="height: 500px;">
+                    <div id="DLP_Inset_Card_1" style="display: flex; padding: 16px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; align-self: stretch; border-radius: 8px; outline: 2px solid rgba(var(--DLP-blue), 0.20); outline-offset: -2px; background: rgba(var(--DLP-blue), 0.10); overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.32, 1);">
+                        <div class="DLP_HStack_6">
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: rgb(var(--DLP-blue));">􀅵</p>
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: rgb(var(--DLP-blue)); flex: 1 0 0;">Response Times</p>
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: rgb(var(--DLP-blue));">􀯻</p>
+                        </div>
+                        <p class="DLP_Text_Style_1 DLP_NoSelect" style="align-self: stretch; color: rgb(var(--DLP-blue)); opacity: 0.5; display: none; opacity: 0; filter: blur(4px); height: 0px; transition: 0.4s cubic-bezier(0.16, 1, 0.32, 1);">It may take a few hours for a developer to respond to you. You will be notified in Duolingo PRO when there’s a reply.</p>
+                    </div>
+
+                    <div class="DLP_Chat_Box_1_ID_1" style="display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1 0 0; align-self: stretch; overflow-y: auto;">
+
+                    </div>
+
+                    <div style="display: flex; display: none; flex-direction: column; justify-content: center; align-items: center; gap: 8px; flex: 1 0 0; align-self: stretch;">
+                        <div class="DLP_VStack_4" style="padding: 0px 32px;">
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: rgb(var(--DLP-blue));">􂄺</p>
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="align-self: stretch; text-align: center; opacity: 0.5;">Send a message to start chatting</p>
+                        </div>
+                    </div>
+
+                    <div class="DLP_VStack_8" id="DLP_Inset_Group_2" style="display: none;">
+                        <div id="DLP_Inset_Card_2" style="display: flex; padding: 16px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; align-self: stretch; border-radius: 8px; outline: 2px solid rgba(var(--DLP-blue), 0.20); outline-offset: -2px; background: rgba(var(--DLP-blue), 0.10); overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.32, 1);">
+                            <div class="DLP_HStack_6">
+                                <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: rgb(var(--DLP-blue));">􀿌</p>
+                                <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: rgb(var(--DLP-blue)); flex: 1 0 0;">This chat was closed.</p>
+                            </div>
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="align-self: stretch; color: rgb(var(--DLP-blue)); opacity: 0.5;">We hope to have solved your issue. If not, you can start a new chat.</p>
+                        </div>
+
+                        <div class="DLP_Input_Button_Style_1_Active DLP_Magnetic_Hover_1 DLP_NoSelect" id="DLP_Inset_Button_3_ID" style="width: 100%;">
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: #FFF;">Start a New Chat</p>
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: #FFF;">􀅼</p>
+                        </div>
+                    </div>
+
+                    <div class="DLP_VStack_8" id="DLP_Inset_Group_1">
+                        <div id="DLP_Attachment_Preview_Parent" class="DLP_Row DLP_Left DLP_Gap_8" style="width: 100%; overflow-y: scroll; display: none;">
+                            <div class="DLP_Attachment_Box_Drop_1 DLP_Fill_Col" style="height: 96px; display: none;">
+                                <div class="DLP_Row DLP_Gap_6" style="opacity: 0.5;">
+                                    <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: rgb(var(--DLP-blue));">􀉂</p>
+                                    <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: rgb(var(--DLP-blue));">Drop here to attach</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="DLP_HStack_8" style="align-items: flex-end;">
+                            <div class="DLP_Input_Button_Style_1_Active DLP_Magnetic_Hover_1 DLP_NoSelect DLP_Hide_Scrollbar" id="DLP_Inset_Button_1_ID" style="width: 48px; background: rgba(var(--DLP-blue), 0.10); outline-offset: -2px; outline: 2px solid rgba(var(--DLP-blue), 0.20);">
+                                <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: rgb(var(--DLP-blue));">􀅼</p>
+                                <input type="file" id="DLP_Attachment_Input_1" accept="image/*, video/*" multiple style="display: none;">
+                            </div>
+                            <div class="DLP_Input_Style_1_Active" style="padding: 0;">
+                                <textarea type="text" placeholder="Type here..." id="DLP_Inset_Input_1_ID" class="DLP_Input_Style_1 DLP_Hide_Scrollbar" style="padding: 16px; box-sizing: content-box; overflow: scroll;"></textarea>
+                            </div>
+                            <div class="DLP_Input_Button_Style_1_Active DLP_Magnetic_Hover_1 DLP_NoSelect" id="DLP_Inset_Button_2_ID" style="width: 48px;">
+                                <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: #FFF;">􀰫</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </div>
 `;
@@ -1325,6 +1401,13 @@ svg {
     align-items: center;
     gap: 12px;
     align-self: stretch;
+}
+.DLP_Hide_Scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.DLP_Hide_Scrollbar::-webkit-scrollbar {
+    display: none;
 }
 .DLP_Button_Style_1 {
     display: flex;
@@ -1787,7 +1870,7 @@ HTML4 = `
 
 HTML5 = `
 <div class="DLP_AutoServer_Mother_Box" style="display: none; opacity: 0; filter: blur(8px);">
-    <div class="DLP_AutoServer_Box">
+    <div class="DLP_AutoServer_Box DLP_Hide_Scrollbar">
         <div class="DLP_AutoServer_Menu_Bar">
             <div style="display: flex; justify-content: center; align-items: center; gap: 6px; opacity: 0.5;">
                 <p id="DLP_AutoServer_Close_Button_1_ID" class="DLP_AutoServer_Text_Style_1 DLP_Magnetic_Hover_1" style="color: rgb(var(--color-black-text));">􀆄</p>
@@ -2012,9 +2095,6 @@ CSS5 = `
     background: rgba(var(--color-snow), 0.90);
     backdrop-filter: blur(16px);
     box-sizing: border-box;
-}
-.DLP_AutoServer_Box::-webkit-scrollbar {
-    display: none;
 }
 
 .DLP_AutoServer_Menu_Bar {
@@ -2740,7 +2820,9 @@ function One() {
         "DLP_Universal_Back_1_Button_1_ID": [1],
 
         "DLP_Main_Settings_1_Button_1_ID": [7],
-        "DLP_Main_Feedback_1_Button_1_ID": [8],
+        //"DLP_Main_Feedback_1_Button_1_ID": [8],
+
+        "DLP_Main_Feedback_1_Button_1_ID": [11],
 
         "DLP_Main_Whats_New_1_Button_1_ID": [9],
         "DLP_Main_See_More_1_Button_1_ID": [2],
@@ -2809,6 +2891,18 @@ function One() {
             storageLocal.onboarding = true;
             saveStorageLocal();
             goToPage(1);
+        } else if (buttonID === 'DLP_Main_Feedback_1_Button_1_ID') {
+            setTimeout(() => {
+                const chatBox = document.querySelector('#DLP_Main_Box_Divider_11_ID')?.querySelector('.DLP_Chat_Box_1_ID_1');
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 420);
+        }
+
+        if (toNumber === 11) {
+            if (newReplyButtonActive) {
+                newReplyButtonActive = false;
+                updateConnetionButtonStyles(document.getElementById("DLP_Main_Feedback_1_Button_1_ID"), {button: 'linear-gradient(0deg, rgba(var(--DLP-blue), 0.10) 0%, rgba(var(--DLP-blue), 0.10) 100%), rgba(var(--color-snow), 0.80)', outline: 'rgba(var(--DLP-blue), 0.20)', text: 'rgb(var(--DLP-blue))', icon: 'rgb(var(--DLP-blue))'}, {text: systemText[systemLanguage][5], icon: '􂄺'}, {text: '', icon: ''});
+            }
         }
 
         if (toNumber === 2) mainBoxNewToBeWidth = "600";
@@ -2816,6 +2910,7 @@ function One() {
         else if (toNumber === 7) mainBoxNewToBeWidth = "400";
         else if (toNumber === 8) mainBoxNewToBeWidth = "400";
         else if (toNumber === 9) mainBoxNewToBeWidth = "400";
+        else if (toNumber === 11) mainBoxNewToBeWidth = "400";
         else mainBoxNewToBeWidth = "312";
 
         if ([1, 2, 3, 4].includes(toNumber)) legacyButtonVisibility(true);
@@ -3914,11 +4009,66 @@ function One() {
     let serverConnectedBefore = 'no';
     let serverConnectedBeforeNotification;
     let newTermID;
+    let chatMemory = [];
+    let chatTempSendList = [];
+    let chatMemoryFingerprints = [];
+
+    function normalizeMessageValue(value) {
+        if (Array.isArray(value)) {
+            return value.map(normalizeMessageValue);
+        }
+        if (value && typeof value === 'object') {
+            const sortedKeys = Object.keys(value).sort();
+            const normalizedObject = {};
+            sortedKeys.forEach(key => {
+                normalizedObject[key] = normalizeMessageValue(value[key]);
+            });
+            return normalizedObject;
+        }
+        if (value === undefined || Number.isNaN(value)) {
+            return null;
+        }
+        return value;
+    }
+
+    function computeMessageFingerprint(message) {
+        const relevantData = {
+            accent: message?.accent ?? '',
+            author: message?.author ?? '',
+            deleted: message?.deleted ?? false,
+            edited: message?.edited ?? false,
+            files: Array.isArray(message?.files) ? message.files.slice() : [],
+            message: message?.message ?? '',
+            profile_picture: message?.profile_picture ?? '',
+            role: message?.role ?? '',
+            send_time: message?.send_time ?? null,
+            status: message?.status ?? ''
+        };
+
+        try {
+            return JSON.stringify(normalizeMessageValue(relevantData));
+        } catch (error) {
+            console.error('Failed to compute message fingerprint', error);
+            return JSON.stringify({ send_time: message?.send_time ?? null });
+        }
+    }
+
+    function areArraysEqual(arrayA = [], arrayB = []) {
+        if (arrayA.length !== arrayB.length) return false;
+        for (let i = 0; i < arrayA.length; i++) {
+            if (arrayA[i] !== arrayB[i]) return false;
+        }
+        return true;
+    }
     let newReplyButtonActive = false;
+    let userBioData = false;
     let kqjzvmbt = false;
     let intelligentXPAmount = 20000;
     function connectToServer() {
         let mainInputsDiv1 = document.getElementById('DLP_Main_Inputs_1_Divider_1_ID');
+
+        let chatTempSendListSnapshot = chatTempSendList;
+        const chatKeyValue = storageLocal?.chatKey?.[0] ?? false;
 
         //fetch(apiURL + '/server', {
         fetch('https://api.duolingopro.net/server', {
@@ -3928,12 +4078,93 @@ function One() {
             },
             body: JSON.stringify({
                 version: versionFormal,
-                key: storageLocal.random16
+                key: storageLocal.random16,
+                ...(chatKeyValue && { chat_key: chatKeyValue })
             })
         })
             .then(response => response.json())
             .then(data => {
                 if (data.global || data.versions) {
+                    console.log(data.chats);
+
+                    if (!userBioData && !fetchingUserBioData) {
+                        fetchUserBioData();
+                    }
+
+                    if (chatKeyValue) {
+                        if (!data.chats) {
+                            if (kqjzvmbt) {
+                                storageLocal.chatKey.shift();
+                                saveStorageLocal();
+                            }
+                            kqjzvmbt = true;
+                        } else {
+                            buildChat(data);
+                        }
+                    }
+
+                    function buildChat(data) {
+                        const chatParent = document.querySelector('#DLP_Main_Box_Divider_11_ID').lastElementChild;
+                        const chatBox = chatParent?.querySelector('.DLP_Chat_Box_1_ID_1');
+                        if (!chatBox) return;
+
+                        if (typeof data === 'undefined' || typeof data.chats === 'undefined' || !Array.isArray(data.chats.messages)) return;
+
+                        if (data.chats.solved) {
+                            chatParent.querySelector('#DLP_Inset_Group_1').style.display = 'none';
+                            chatParent.querySelector('#DLP_Inset_Group_2').style.display = '';
+                        }
+
+                        const incomingMessages = data.chats.messages.filter(msg => !msg?.deleted && msg?.status !== 'deleted');
+                        const nextFingerprints = incomingMessages.map(computeMessageFingerprint);
+                        const hasChanges = nextFingerprints.length !== chatMemoryFingerprints.length || nextFingerprints.some((fingerprint, index) => fingerprint !== chatMemoryFingerprints[index]);
+
+                        if (hasChanges) {
+                            const previousLength = chatMemory.length;
+                            const wasAtBottom = Math.abs(chatBox.scrollHeight - (chatBox.scrollTop + chatBox.clientHeight)) < 5;
+                            const scrollOffsetFromBottom = chatBox.scrollHeight - chatBox.scrollTop;
+
+                            chatBox.innerHTML = '';
+                            incomingMessages.forEach(message => {
+                                createMessage(message);
+                            });
+
+                            const hasNewMessages = incomingMessages.length > previousLength;
+                            if (hasNewMessages || wasAtBottom) {
+                                chatBox.scrollTop = chatBox.scrollHeight;
+                            } else {
+                                const newScrollTop = chatBox.scrollHeight - scrollOffsetFromBottom;
+                                chatBox.scrollTop = newScrollTop < 0 ? 0 : newScrollTop;
+                            }
+                        }
+
+                        chatMemory = incomingMessages.map(message => ({ ...message }));
+                        chatMemoryFingerprints = nextFingerprints;
+
+                        const knownSendTimes = storageLocal.chats ?? [];
+                        if (currentPage === 11) {
+                            const newSendTimes = chatMemory.map(msg => msg.send_time);
+                            if (!areArraysEqual(knownSendTimes, newSendTimes)) {
+                                storageLocal.chats = newSendTimes;
+                                saveStorageLocal();
+                            }
+                        } else {
+                            incomingMessages.forEach(msg => {
+                                if (!knownSendTimes.includes(msg.send_time) && !newReplyButtonActive) {
+                                    newReplyButtonActive = true;
+                                    updateConnetionButtonStyles(document.getElementById("DLP_Main_Feedback_1_Button_1_ID"), {button: 'rgb(var(--DLP-blue))', outline: 'rgba(0, 0, 0, 0.20)', text: '#FFF', icon: '#FFF'}, {text: 'New Reply', icon: '􀝗'}, {text: 'DLP_Pulse_Opacity_Animation_1 6s ease-in-out infinite', icon: 'DLP_Pulse_Opacity_Animation_1 6s ease-in-out infinite'});
+                                    showNotification({icon: "􂄺", color: "rgb(var(--DLP-blue))"}, "Support Team Response", "You have a new message from our support team.", 30);
+                                }
+                            });
+                        }
+
+                        for (let i = 0; i < chatTempSendListSnapshot.length; i++) {
+                            updateMessageOnServer(false, chatTempSendListSnapshot[i]);
+                            chatTempSendList.splice(chatTempSendList.indexOf(chatTempSendListSnapshot[i]), 1);
+                        }
+                    }
+
+
                     const globalData = data.global;
                     const versionData = data.versions[versionFull];
                     const warnings = versionData.warnings || [];
@@ -3980,6 +4211,20 @@ function One() {
                         }
                         serverConnectedBefore = 'outdated';
                     }
+
+                    //if (storageLocal.languagePackVersion !== versionData.languagePackVersion) {
+                    //    fetch(serverURL + "/static/3.0/resources/language_pack.json")
+                    //        .then(response => response.json())
+                    //        .then(data => {
+                    //            if (data[versionFull]) {
+                    //                storageLocal.languagePack = data[versionFull];
+                    //                console.log(data[versionFull]);
+                    //                storageLocal.languagePackVersion = versionData.languagePackVersion;
+                    //                saveStorageLocal();
+                    //            }
+                    //        })
+                    //        .catch(error => console.error('Error fetching systemText:', error));
+                    //}
                 } else {
                     console.error(`Version ${versionNumber} not found in the data`);
                 }
@@ -4005,6 +4250,578 @@ function One() {
         if (document.visibilityState === "visible" || isAutoMode) connectToServer();
     }, 4000);
 
+    let fetchingUserBioData = false;
+    async function fetchUserBioData() {
+        fetchingUserBioData = true;
+        console.log('FETHCING FOR YOU YOUR HONOR');
+        const userResponse = await fetch('https://www.duolingo.com/2017-06-30/users/' + JSON.parse(atob(document.cookie.split(';').find(cookie => cookie.includes('jwt_token')).split('=')[1].split('.')[1])).sub + '?fields=name,username,picture');
+        if (!userResponse.ok) {
+            fetchingUserBioData = false;
+            return;
+        }
+        const userData = await userResponse.json();
+        console.log(userData);
+        userBioData = {
+            username: (userData.name && userData.name.trim().length > 0) ? userData.name : userData.username,
+            profile_picture: "https:" + userData.picture + "/xlarge"
+        };
+        fetchingUserBioData = false;
+    }
+
+    function createMessage(message, isBefore=false, isTemp=false) {
+        function formatTimeAgo(timestamp) {
+            // If the timestamp is in seconds (10 digits), convert to ms
+            if (timestamp < 1e12) {
+                timestamp = timestamp * 1000;
+            }
+            const now = Date.now();
+            const diff = now - timestamp; // Difference in milliseconds
+
+            const seconds = Math.floor(diff / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            const weeks = Math.floor(days / 7);
+            const months = Math.floor(days / 30);
+            const years = Math.floor(days / 365);
+
+            if (seconds < 60) {
+                return "now";
+            } else if (minutes < 60) {
+                return `${minutes}m ago`;
+            } else if (hours < 24) {
+                return `${hours}h ago`;
+            } else if (days < 7) {
+                return `${days}d ago`;
+            } else if (weeks < 4) {
+                return `${weeks}w ago`;
+            } else if (months < 12) {
+                return `${months}m ago`;
+            } else {
+                return `${years}y ago`;
+            }
+        }
+        function toMilliseconds(ts) {
+            return ts < 1e12 ? ts * 1000 : ts;
+        }
+        function updateTimeAgo(element, timestamp) {
+            function update() {
+                if (!document.contains(element)) {
+                    clearInterval(intervalId);
+                    return;
+                }
+                const newText = formatTimeAgo(timestamp);
+                if (element.textContent !== newText) {
+                    element.textContent = newText;
+                }
+            }
+
+            update();
+            const intervalId = setInterval(update, 1000);
+        }
+
+        const chatBox = document.querySelector('#DLP_Main_Box_Divider_11_ID')?.querySelector('.DLP_Chat_Box_1_ID_1');
+
+        let lastChatChild = chatBox.lastElementChild;
+        if (isBefore) lastChatChild = isBefore.previousElementSibling;
+
+        function createStartersMessage(message) {
+            const temp = document.createElement('div');
+            temp.innerHTML = `
+                <div class="DLP_VStack_4" data-group-timestamp="${message.send_time}" data-author-name="${message.author}">
+                    <div data-chat-header="true" style="display: flex; justify-content: space-between; align-items: center; align-self: stretch;">
+                        <div class="DLP_HStack_6">
+                            <div style="width: 20px; height: 20px; border-radius: 16px; outline: rgba(0, 0, 0, 0.2) solid 2px; outline-offset: -2px; background: url(${message.profile_picture}) 50% center / cover no-repeat white;"></div>
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: ${message.accent}; opacity: 0.5;">${message.author}</p>
+                        </div>
+                        <div class="DLP_HStack_6">
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: ${message.accent}; opacity: 0.5;">${message.role}</p>
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" style="color: ${message.accent}; opacity: 0.5; font-size: 4px;">􀀁</p>
+                            <p class="DLP_Text_Style_1 DLP_NoSelect" data-time-element="true" style="color: ${message.accent}; opacity: 0.5;">${formatTimeAgo(message.send_time)}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            const newElement = temp.firstElementChild;
+            chatBox.appendChild(newElement);
+            lastChatChild = newElement;
+
+            updateTimeAgo(document.querySelector(`[data-group-timestamp="${message.send_time}"] [data-time-element="true"]`), message.send_time);
+
+            createContinuationMessage(message);
+        }
+
+        function createContinuationMessage(message) {
+            const firstMessageTimestamp = parseInt(lastChatChild.getAttribute('data-group-timestamp'));
+            if (toMilliseconds(message.send_time) - toMilliseconds(firstMessageTimestamp) > 900000) { // 15 minutes, 900,000 milliseconds
+                createStartersMessage(message);
+                return;
+            }
+            if (message.message !== "") {
+                const temp = document.createElement('div');
+                temp.innerHTML = `
+                    <p class="DLP_Text_Style_1" data-message-timestamp="${message.send_time}"${isTemp ? ` data-is-temp="${isTemp}"` : ''} style="align-self: stretch; opacity: 0.5; white-space: pre-line; overflow-wrap: anywhere; word-break: break-word;${isTemp ? ' animation: DLP_Pulse_Opacity_Animation_2 2s ease-in-out infinite;' : ''}">${message.message}</p>
+                `;
+                const newElement = temp.firstElementChild;
+                lastChatChild.appendChild(newElement);
+            }
+            createAttachmentMessage(message);
+        }
+
+        function expandAttachment(lastAttachment) {
+            let expanded = false;
+
+            function getElementPosition(element) {
+                if (!element || !(element instanceof Element)) {
+                    return false;
+                }
+                const rect = element.getBoundingClientRect();
+                return {
+                    top: rect.top,
+                    right: rect.right,
+                    bottom: rect.bottom,
+                    left: rect.left,
+                    width: rect.width,
+                    height: rect.height
+                };
+            }
+
+            async function getElementDimensions(element) {
+                return new Promise((resolve, reject) => {
+                    if (!(element instanceof HTMLImageElement) && !(element instanceof HTMLVideoElement)) {
+                    return reject(new Error('Element must be an image or video'));
+                    }
+
+                    if (element instanceof HTMLImageElement) {
+                    if (element.complete) {
+                        return resolve({ width: element.naturalWidth, height: element.naturalHeight });
+                    }
+                    element.addEventListener('load', () => {
+                        resolve({ width: element.naturalWidth, height: element.naturalHeight });
+                    }, { once: true });
+                    element.addEventListener('error', () => {
+                        reject(new Error('Failed to load image'));
+                    }, { once: true });
+                    } else if (element instanceof HTMLVideoElement) {
+                    if (element.readyState >= 1) {
+                        return resolve({ width: element.videoWidth, height: element.videoHeight });
+                    }
+                    element.addEventListener('loadedmetadata', () => {
+                        resolve({ width: element.videoWidth, height: element.videoHeight });
+                    }, { once: true });
+                    element.addEventListener('error', () => {
+                        reject(new Error('Failed to load video'));
+                    }, { once: true });
+                    }
+                });
+            }
+
+            function getMaxDimensions(element) {
+                const computedStyle = window.getComputedStyle(element);
+                const maxWidth = computedStyle.maxWidth;
+                const maxHeight = computedStyle.maxHeight;
+
+                const result = { width: null, height: null };
+
+                function parseCalcOrPixel(value, dimension) {
+                    // If value is in pixels, return it
+                    if (value.endsWith('px')) {
+                    return parseFloat(value);
+                    }
+
+                    // Handle calc(100% - Npx)
+                    if (value.includes('calc')) {
+                    const match = value.match(/calc\(100% - (\d+\.?\d*?)px\)/);
+                    if (match) {
+                        const subtractedPx = parseFloat(match[1]);
+                        const parent = element.parentElement;
+                        if (dimension === 'width') {
+                        return parent ? parent.getBoundingClientRect().width - subtractedPx : window.innerWidth - subtractedPx;
+                        } else if (dimension === 'height') {
+                        return parent ? parent.getBoundingClientRect().height - subtractedPx : window.innerHeight - subtractedPx;
+                        }
+                    }
+                    }
+
+                    return false; // Fallback
+                }
+
+                // Calculate max-width and max-height in pixels
+                result.width = parseCalcOrPixel(maxWidth, 'width');
+                result.height = parseCalcOrPixel(maxHeight, 'height');
+
+                return result;
+            }
+
+            async function fitToWindow() {
+                const max = getMaxDimensions(lastAttachment);
+                const lastAttachmentContent = lastAttachment.querySelector('.DLP_Attachment_Box_1_Content');
+                const orig = await getElementDimensions(lastAttachmentContent);
+                const scale = Math.min(max.width / orig.width, max.height / orig.height);
+
+                const w = Math.floor(orig.width * scale);
+                const h = Math.floor(orig.height * scale);
+                lastAttachment.style.width = `${w}px`;
+                lastAttachment.style.height = `${h}px`;
+            }
+
+            lastAttachment.addEventListener('mouseenter', () => {
+                if (expanded) return;
+                lastAttachment.querySelector('.DLP_Attachment_Box_1_Hover').style.display = '';
+            });
+            lastAttachment.addEventListener('mouseleave', () => {
+                if (expanded) return;
+                lastAttachment.querySelector('.DLP_Attachment_Box_1_Hover').style.display = 'none';
+            });
+            lastAttachment.querySelector('.DLP_Attachment_Box_1_Hover p').addEventListener('click', async () => {
+                expanded = true;
+                lastAttachment.querySelector('.DLP_Attachment_Box_1_Hover').style.display = 'none';
+
+                let pos = getElementPosition(lastAttachment);
+                const tempHover = document.createElement('div');
+                tempHover.style.width = pos.width + 'px';
+                tempHover.style.height = pos.height + 'px';
+                tempHover.style.opacity = '0';
+
+                // append tempHover right before lastAttachment
+                lastAttachment.parentNode.insertBefore(tempHover, lastAttachment);
+
+                const largeViewMotherBox = document.createElement('div');
+                largeViewMotherBox.className = 'DLP_Attachment_Box_Large_View_1';
+                document.body.appendChild(largeViewMotherBox);
+
+                let closeBtn = `
+                    <div style="display: flex; padding: 2px; justify-content: center; align-items: center; gap: 6px; opacity: 0.5; position: absolute; bottom: 24px; pointer-events: none;">
+                        <p class="DLP_Text_Style_1 DLP_NoSelect">􀆄</p>
+                        <p class="DLP_Text_Style_1 DLP_NoSelect">Close</p>
+                    </div>
+                `;
+                largeViewMotherBox.insertAdjacentHTML('beforeend', closeBtn);
+
+                function getTransformToMatchPosition(element) {
+                    const parentRect = largeViewMotherBox.getBoundingClientRect();
+                    const centerX = parentRect.width / 2;
+                    const centerY = parentRect.height / 2;
+                    const elementRect = element.getBoundingClientRect();
+                    const elementCenterX = elementRect.width / 2;
+                    const elementCenterY = elementRect.height / 2;
+                    const shiftX = pos.left + elementCenterX - centerX;
+                    const shiftY = pos.top + elementCenterY - centerY;
+                    return { translateX: shiftX, translateY: shiftY };
+                }
+
+                largeViewMotherBox.appendChild(lastAttachment);
+
+                translate = getTransformToMatchPosition(lastAttachment);
+
+                lastAttachment.style.transform = `translate(${translate.translateX}px, ${translate.translateY}px)`;
+                void lastAttachment.offsetHeight;
+
+                lastAttachment.style.transition = '0.4s cubic-bezier(0.16, 1, 0.32, 1)';
+
+                void lastAttachment.offsetHeight;
+
+                lastAttachment.style.transform = 'translate(0px, 0px)';
+
+                largeViewMotherBox.style.background = 'rgba(var(--color-snow), 0.50)';
+                largeViewMotherBox.style.backdropFilter = 'blur(16px)';
+
+                lastAttachment.style.aspectRatio = 'unset';
+
+                let lastAttachmentContent = lastAttachment.querySelector('.DLP_Attachment_Box_1_Content');
+
+                lastAttachmentContent.style.aspectRatio = 'unset';
+                lastAttachmentContent.style.maxWidth = '100%';
+                lastAttachmentContent.style.maxHeight = '100%';
+                lastAttachmentContent.style.width = 'auto';
+                lastAttachmentContent.style.height = 'auto';
+
+                lastAttachment.style.maxWidth = 'calc(100% - 32px)';
+                lastAttachment.style.maxHeight = 'calc(100% - 142px)';
+
+                lastAttachment.style.display = 'inline-flex';
+
+                lastAttachment.style.width = 'auto';
+                lastAttachment.style.height = 'auto';
+
+                void lastAttachment.offsetHeight;
+
+                const maxDimensions = getMaxDimensions(lastAttachment);
+                const elementDimensions = await getElementDimensions(lastAttachmentContent);
+
+                // compute uniform scale to fit within maxDimensions
+                const scale = Math.min(maxDimensions.width / elementDimensions.width, maxDimensions.height / elementDimensions.height);
+
+                // calculate final pixel dimensions
+                let newWidth = Math.floor(elementDimensions.width * scale);
+                let newHeight = Math.floor(elementDimensions.height * scale);
+
+                //let newWidth = lastAttachmentContent.offsetWidth;
+                //let newHeight = lastAttachmentContent.offsetHeight;
+
+                lastAttachment.style.width = '';
+                lastAttachment.style.height = '';
+
+                void lastAttachment.offsetHeight;
+
+                lastAttachment.style.width = newWidth + 'px';
+                lastAttachment.style.height = newHeight + 'px';
+
+                lastAttachmentContent.style.width = '100%';
+                lastAttachmentContent.style.height = '100%';
+
+                if (lastAttachmentContent.tagName.toLowerCase() === 'video') {
+                    lastAttachmentContent.controls = true;
+                    lastAttachmentContent.autoplay = false;
+                    lastAttachmentContent.muted = false;
+                    lastAttachmentContent.currentTime = 0;
+                    lastAttachmentContent.play();
+                }
+
+                window.addEventListener('resize', fitToWindow);
+
+                largeViewMotherBox.addEventListener('click', (event) => {
+                    if (largeViewMotherBox === event.target && lastAttachment !== event.target) {
+                        window.removeEventListener('resize', fitToWindow);
+
+                        if (lastAttachmentContent.tagName.toLowerCase() === 'video') {
+                            lastAttachmentContent.controls = false;
+                            lastAttachmentContent.autoplay = true;
+                            lastAttachmentContent.muted = true;
+                            lastAttachmentContent.play();
+                        }
+
+                        lastAttachment.style.transform = `translate(${translate.translateX}px, ${translate.translateY}px)`;
+                        lastAttachment.style.width = pos.width + 'px';
+                        lastAttachment.style.height = pos.height + 'px';
+
+                        largeViewMotherBox.style.background = 'rgba(var(--color-snow), 0.00)';
+                        largeViewMotherBox.style.backdropFilter = 'blur(0px)';
+
+                        setTimeout(() => {
+                            tempHover.parentNode.insertBefore(lastAttachment, tempHover);
+                            lastAttachment.style.transform = '';
+                            tempHover.remove();
+                            largeViewMotherBox.remove();
+
+                            lastAttachment.style.aspectRatio = '';
+                            lastAttachment.querySelector('.DLP_Attachment_Box_1_Content').style.aspectRatio = '';
+                            lastAttachment.querySelector('.DLP_Attachment_Box_1_Content').style.maxWidth = '';
+                            lastAttachment.querySelector('.DLP_Attachment_Box_1_Content').style.maxHeight = '';
+                            lastAttachment.querySelector('.DLP_Attachment_Box_1_Content').style.width = '';
+                            lastAttachment.querySelector('.DLP_Attachment_Box_1_Content').style.height = '';
+
+                            lastAttachment.style.maxWidth = '';
+                            lastAttachment.style.maxHeight = '';
+
+                            lastAttachment.style.display = '';
+
+                            lastAttachment.style.transition = '';
+                            void lastAttachment.offsetHeight;
+
+                            expanded = false;
+                        }, 400);
+                    }
+                });
+            });
+        }
+
+        async function createAttachmentMessage(message) {
+            async function contentType(url) {
+                const imageExts = ['jpg','jpeg','png','gif','webp','bmp','svg'];
+                const videoExts = ['mp4','webm','ogg','mov','m4v'];
+
+                let ft = '';
+                try {
+                    const u = new URL(url);
+                    ft = (u.searchParams.get('filetype') || '').toLowerCase();
+                } catch (e) {
+                    const qs = url.split('?')[1] || '';
+                    const match = qs.match(/(?:^|&)filetype=([^&]+)/i);
+                    ft = match ? decodeURIComponent(match[1]).toLowerCase() : '';
+                }
+                if (imageExts.includes(ft)) return 'image';
+                if (videoExts.includes(ft)) return 'video';
+
+                // 3) give up
+                return 'other';
+            }
+
+            if (message.files.length > 0) {
+                const temp2 = document.createElement('div');
+                temp2.innerHTML = `
+                    <div data-message-timestamp="${message.send_time}"${isTemp ? ` data-is-temp="${isTemp}"` : ''} class="DLP_Hide_Scrollbar" style="display: flex; align-items: center; gap: 8px; align-self: stretch; width: 100%; overflow-y: scroll; opacity: 1; filter: blur(0px); margin-top: 0px; transition: 0.4s cubic-bezier(0.16, 1, 0.32, 1);"></div>
+                `;
+                const newElement2 = temp2.firstElementChild;
+                lastChatChild.appendChild(newElement2);
+                let attachmentParent = lastChatChild.lastElementChild;
+                for (let i = 0; i < message.files.length; i++) {
+                    const file = message.files[i];
+                    const temp = document.createElement('div');
+                    let extensionType = await contentType(file);
+                    if (extensionType === 'image') {
+                        temp.innerHTML = `
+                            <div class="DLP_Attachment_Box_1" data-preview-src="${file}">
+                                <img class="DLP_Attachment_Box_1_Content" src="${file}">
+                                <div class="DLP_Attachment_Box_1_Hover" style="display: none;">
+                                    <p class="DLP_Text_Style_1 DLP_Magnetic_Hover_1 DLP_NoSelect">􂅆</p>
+                                </div>
+                            </div>
+                        `;
+                    } else if (extensionType === 'video') {
+                        temp.innerHTML = `
+                            <div class="DLP_Attachment_Box_1" data-preview-src="${file}">
+                                <video class="DLP_Attachment_Box_1_Content" src="${file}" muted autoplay loop></video>
+                                <div class="DLP_Attachment_Box_1_Hover" style="display: none;">
+                                    <p class="DLP_Text_Style_1 DLP_Magnetic_Hover_1 DLP_NoSelect">􂅆</p>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        temp.innerHTML = `
+                            <div class="DLP_Attachment_Box_1" data-preview-src="${file}">
+                                <div style="display: flex; width: 100%; height: 100%; padding-top: 6px; flex-direction: column; justify-content: center; align-items: center; gap: 6px; flex-shrink: 0;">
+                                    <p class="DLP_Text_Style_1 DLP_NoSelect" style="font-size: 24px;">􀈸</p>
+                                    <p class="DLP_Text_Style_1 DLP_NoSelect" style="opacity: 0.5;">File</p>
+                                </div>
+                                <div class="DLP_Attachment_Box_1_Hover" style="display: none;">
+                                    <p class="DLP_Text_Style_1 DLP_Magnetic_Hover_1 DLP_NoSelect">􀄉</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                    const newElement = temp.firstElementChild;
+                    attachmentParent.appendChild(newElement);
+
+                    expandAttachment(newElement);
+                }
+            }
+        }
+
+        if (lastChatChild !== null && message.author === lastChatChild.getAttribute('data-author-name')) {
+            createContinuationMessage(message);
+        } else {
+            createStartersMessage(message);
+        }
+    }
+
+    function updateMessageOnServer(messageSendTime, isTemp=false) {
+        const chatBox = document.querySelector('#DLP_Main_Box_Divider_11_ID')?.querySelector('.DLP_Chat_Box_1_ID_1');
+        if (isTemp) {
+            chatBox.querySelectorAll(`[data-is-temp="${isTemp}"]`).forEach(element => {
+                element.remove();
+            });
+        }
+    }
+
+    function intelligentLeaderboardBasedWarningLimit() {
+        const defaultBoardId = "7d9f5dd1-8423-491a-91f2-2532052038ce";
+        const tournamentBoardId = "4b668ba6-288d-4b78-81a3-7b213175ae2c";
+        const baseUrl = "https://duolingo-leaderboards-prod.duolingo.com/leaderboards/";
+
+        function getDuolingoUserIdFromJwt(token) {
+            try {
+                const p = token.split('.')[1];
+                const decoded = decodeURIComponent(atob(p.replace(/-/g, '+').replace(/_/g, '/').padEnd(p.length + (4 - p.length % 4) % 4, '=')).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+                return JSON.parse(decoded).sub;
+            } catch (e) {
+                console.error("Failed to decode JWT:", e);
+                return null;
+            }
+        }
+
+        function processLeaderboardData(data, userId) {
+            if (!data || !data.active || !data.active.cohort || !data.active.cohort.rankings) {
+                console.log("Chosen leaderboard data is invalid or inactive.");
+                return;
+            }
+
+            const rankings = data.active.cohort.rankings;
+
+            const topN = 5;
+            const topScores = [...rankings].sort((a, b) => b.score - a.score).slice(0, topN).map(user => user.score);
+
+            const userRanking = rankings.find(u => u.user_id === userId);
+            const userScore = userRanking ? userRanking.score : 0;
+
+            const avgTopScore = topScores.length ? Math.round(topScores.reduce((sum, val) => sum + val, 0) / topScores.length) : 0;
+
+            const intelligentAmount = Math.max(0, avgTopScore - userScore);
+            intelligentXPAmount = intelligentAmount;
+
+            console.log(`Using leaderboard: ${data.active.contest.contest_id}`);
+            console.log(`Average top ${topN} score:`, avgTopScore);
+            console.log(`Your score:`, userScore);
+            console.log(`Calculated intelligent warning limit:`, intelligentAmount);
+        }
+
+        const jwtToken = document.cookie.split('; ').find(cookie => cookie.startsWith('jwt_token='))?.split('=')[1];
+        if (!jwtToken) {
+            console.error("JWT token not found. Cannot proceed.");
+            return;
+        }
+
+        const userID = getDuolingoUserIdFromJwt(jwtToken);
+        if (!userID) {
+            console.error("Could not extract User ID from JWT.");
+            return;
+        }
+
+        const spedTimestamp = Date.now();
+        const fetchOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${jwtToken}`
+            }
+        };
+
+        const defaultBoardPromise = fetch(`${baseUrl}${defaultBoardId}/users/${userID}?_=${spedTimestamp}`, fetchOptions).then(res => res.json());
+        const tournamentBoardPromise = fetch(`${baseUrl}${tournamentBoardId}/users/${userID}?_=${spedTimestamp}`, fetchOptions).then(res => res.json());
+
+        Promise.allSettled([tournamentBoardPromise, defaultBoardPromise])
+            .then(([tournamentResult, defaultResult]) => {
+                let selectedData = null;
+                let boardType = "";
+
+                if (tournamentResult.status === 'fulfilled' && tournamentResult.value.active) {
+                    console.log("Tournament leaderboard is active. Using it for calculation.");
+                    selectedData = tournamentResult.value;
+                    boardType = "Tournament";
+                }
+                else if (defaultResult.status === 'fulfilled' && defaultResult.value.active) {
+                    console.log("Default leaderboard is active. Using it for calculation.");
+                    selectedData = defaultResult.value;
+                    boardType = "Default";
+                }
+
+                if (selectedData) {
+                    processLeaderboardData(selectedData, userID);
+                } else {
+                    console.log("No active leaderboards found (neither tournament nor default).");
+                    if(tournamentResult.status === 'rejected') console.error("Tournament fetch failed:", tournamentResult.reason);
+                    if(defaultResult.status === 'rejected') console.error("Default fetch failed:", defaultResult.reason);
+                }
+            })
+            .catch(error => {
+                console.error("An unexpected error occurred during the fetch process:", error);
+            });
+    }
+    function intelligentLeaderboardBasedWarningLimitTicker() {
+        intelligentLeaderboardBasedWarningLimit();
+        function randPeriod() { return (60 + Math.floor(Math.random() * 61)) * 1000; } // 60–120s inclusive
+        let periodMs = randPeriod();
+        let lastRun = Date.now();
+
+        const id = setInterval(() => {
+            if (Date.now() - lastRun >= periodMs) {
+                lastRun = Date.now();
+                try { intelligentLeaderboardBasedWarningLimit(); } catch (e) { console.error(e); }
+                periodMs = randPeriod(); // pick next period
+            }
+        }, 1000);
+    }
+    // intelligentLeaderboardBasedWarningLimitTicker();
 
     function updateReleaseNotes(warnings) {
         const releaseNotesContainer = document.getElementById('DLP_Release_Notes_List_1_ID');
@@ -4834,6 +5651,579 @@ function One() {
 
 
 
+    let currentChatId = 1;
+    let allTexts = {}; // { [chatId]: text }
+    let allAttachments = {}; // { [chatId]: [ {id, file}, … ] }
+
+    function setupSupportPage() {
+        const container = document.getElementById("DLP_Main_Box_Divider_11_ID");
+        const chatBox = container.querySelector('.DLP_Chat_Box_1_ID_1');
+        const attachmentVisualButton = container.querySelector('#DLP_Inset_Button_1_ID');
+        const sendButton = container.querySelector("#DLP_Inset_Button_2_ID");
+        const attachmentInput = container.querySelector("#DLP_Attachment_Input_1");
+        const messageInput = container.querySelector("#DLP_Inset_Input_1_ID");
+        const activeContainer = container.querySelector('.DLP_Input_Style_1_Active');
+
+        function resetMessageInputState() {
+            messageInput.value = '';
+            messageInput.style.height = '1.2em';
+            if (activeContainer) activeContainer.style.height = '48px';
+            messageInput.scrollTop = 0;
+            checkSendButton();
+        }
+
+        function setupCard() {
+            let card = document.getElementById("DLP_Main_Box_Divider_11_ID").querySelector("#DLP_Inset_Card_1");
+            let cardExpanded = false;
+            let cardAnimating = false;
+
+            let descriptionText = card.querySelectorAll(':scope > .DLP_Text_Style_1');
+
+            card.addEventListener('click', () => {
+                if (cardAnimating) return;
+                cardAnimating = true;
+                if (!cardExpanded) {
+                    let cardHeight = card.offsetHeight;
+                    let textHeight = false;
+                    if (descriptionText.length > 0) {
+                        textHeight = Array.from(descriptionText).map(() => "0");
+                        descriptionText.forEach(element => {
+                            element.style.display = 'block';
+                            element.style.height = 'auto';
+                        });
+                    }
+                    void card.offsetHeight;
+                    let newCardHeight = card.offsetHeight;
+                    let newTextHeight = false;
+                    if (descriptionText.length > 0) {
+                        newTextHeight = Array.from(descriptionText).map(element => element.offsetHeight);
+                    }
+                    if (descriptionText.length > 0) {
+                        descriptionText.forEach(element => {
+                            element.style.height = '0px';
+                        });
+                    }
+                    card.style.height = `${cardHeight}px`;
+                    void card.offsetHeight;
+                    if (descriptionText.length > 0) {
+                        descriptionText.forEach(element => {
+                            element.style.filter = 'blur(0px)';
+                            element.style.opacity = '1';
+                        });
+                    }
+                    card.style.height = `${newCardHeight}px`;
+                    if (descriptionText.length > 0) {
+                        descriptionText.forEach(element => {
+                            element.style.height = `${newTextHeight[Array.from(descriptionText).indexOf(element)]}px`;
+                        });
+                    }
+                    card.querySelector('.DLP_HStack_6').style.opacity = '0.5';
+                    card.querySelector('.DLP_HStack_6').lastElementChild.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.32, 1)';
+                    card.querySelector('.DLP_HStack_6').lastElementChild.style.transform = 'rotate(90deg)';
+                    setTimeout(() => {
+                        card.style.height = 'auto';
+                        if (descriptionText.length > 0) {
+                            descriptionText.forEach(element => {
+                                element.style.height = 'auto';
+                            });
+                        }
+                        cardExpanded = true;
+                        cardAnimating = false;
+                    }, 400);
+                } else {
+                    let cardHeight = card.offsetHeight;
+                    let textHeight = false;
+                    if (descriptionText.length > 0) {
+                        textHeight = Array.from(descriptionText).map(element => element.offsetHeight);
+                        descriptionText.forEach(element => {
+                            element.style.display = 'none';
+                        });
+                    }
+                    void card.offsetHeight;
+                    let newCardHeight = card.offsetHeight;
+                    let newTextHeight = false;
+                    if (descriptionText.length > 0) {
+                        newTextHeight = Array.from(descriptionText).map(() => "0");
+                        descriptionText.forEach(element => {
+                            element.style.display = 'block';
+                            element.style.height = `${textHeight[Array.from(descriptionText).indexOf(element)]}px`;
+                        });
+                    }
+                    card.style.height = `${cardHeight}px`;
+                    void card.offsetHeight;
+
+                    if (descriptionText.length > 0) {
+                        descriptionText.forEach(element => {
+                            element.style.filter = 'blur(4px)';
+                            element.style.opacity = '0';
+                        });
+                    }
+                    card.style.height = `${newCardHeight}px`;
+                    if (descriptionText.length > 0) {
+                        descriptionText.forEach(element => {
+                            element.style.height = '0px';
+                        });
+                    }
+                    card.querySelector('.DLP_HStack_6').style.opacity = '1';
+                    card.querySelector('.DLP_HStack_6').lastElementChild.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.32, 1)';
+                    card.querySelector('.DLP_HStack_6').lastElementChild.style.transform = 'rotate(0deg)';
+                    setTimeout(() => {
+                        card.style.height = 'auto';
+                        if (descriptionText.length > 0) {
+                            descriptionText.forEach(element => {
+                                element.style.display = 'none';
+                            });
+                        }
+                        cardExpanded = false;
+                        cardAnimating = false;
+                    }, 400);
+                }
+            });
+        }
+        setupCard();
+
+        function setupSendButton() {
+            sendButton.addEventListener('click', async () => {
+                if (!storageLocal.chatKey || storageLocal.chatKey.length === 0) {
+                    try {
+                        let response = await fetch(apiURL + "/chats/create", {
+                            method: "GET",
+                            headers: {
+                                "Authorization": `Bearer ${document.cookie.split(';').find(cookie => cookie.includes('jwt_token')).split('=')[1]}`
+                            }
+                        });
+
+                        let data = await response.json();
+                        console.log("Server Response:", data);
+                        storageLocal.chatKey = [data.chat_key];
+                        saveStorageLocal();
+                    } catch (error) {
+                        console.error("Fetch error:", error);
+                    }
+                }
+
+                let formData = new FormData();
+                formData.append("message", messageInput.value);
+
+                let fileUrls = [];
+                for (const attachment of allAttachments[currentChatId] ?? []) {
+                    const file = attachment.file;
+                    console.log("attaching", file);
+                    formData.append("files", file);
+                    const url = URL.createObjectURL(file);
+                    console.log("url", url);
+                    fileUrls.push(url);
+                }
+
+                let tempData = {
+                    "accent": '#007AFF',
+                    "author": userBioData.username,
+                    "edited": false,
+                    "files": fileUrls,
+                    "message": messageInput.value,
+                    "profile_picture": userBioData.profile_picture,
+                    "role": "You",
+                    "send_time": Number(Date.now())
+                }
+
+                let chatTempSendNumber = chatTempSendList.length ? chatTempSendList[chatTempSendList.length - 1] + 1 : 1;
+                createMessage(tempData, false, chatTempSendNumber);
+
+                chatTempSendList.push(chatTempSendNumber);
+
+                chatBox.scrollTop = chatBox.scrollHeight;
+                allAttachments[currentChatId] = [];
+                renderAttachmentsPreview();
+                resetMessageInputState();
+
+                sendButton.style.opacity = '0.5';
+                sendButton.style.pointerEvents = 'none';
+
+                try {
+                    let response = await fetch(apiURL + "/chats/send_message", {
+                        method: "POST",
+                        headers: alpha
+                        ? {
+                            'Authorization': `Bearer ${document.cookie.split(';').find(cookie => cookie.includes('jwt_token')).split('=')[1]}`,
+                            'X-Chat-Key': `${storageLocal.chatKey[0]}`
+                        }
+                        : {
+                            'Authorization': `Bearer ${storageLocal.chatKey[0]}`
+                        },
+                        body: formData
+                    });
+
+                    let responseData = await response.json();
+                    console.log("Server Response:", responseData);
+                    if (!responseData.status) showNotification(responseData.notification.icon, responseData.notification.head, responseData.notification.body, responseData.notification.duration);
+                    chatBox.querySelectorAll(`[data-is-temp="${chatTempSendNumber}"]`).forEach(element => {
+                        //
+                    });
+
+                } catch (error) {
+                    console.error("Fetch error:", error);
+                }
+            });
+        }
+        setupSendButton();
+
+        function setupTextInput() {
+            const sendButton = container.querySelector("#DLP_Inset_Button_2_ID");
+            resetMessageInputState();
+
+            messageInput.addEventListener('input', function () {
+                messageInput.style.height = '1.2em';
+
+                const lineHeight = parseInt(getComputedStyle(messageInput).lineHeight);
+                const maxRows = 5;
+                const maxHeight = lineHeight * maxRows;
+
+                const newHeight = Math.min((messageInput.scrollHeight - 32), maxHeight);
+
+                messageInput.style.height = newHeight + 'px';
+
+                if (newHeight < 20) {
+                    activeContainer.style.height = '48px';
+                } else {
+                    activeContainer.style.height = (newHeight + 32) + 'px';
+                }
+
+                if (messageInput.value.trim() === '') {
+                    sendButton.style.opacity = '0.5';
+                    sendButton.style.pointerEvents = 'none';
+                } else {
+                    sendButton.style.opacity = '';
+                    sendButton.style.pointerEvents = '';
+                }
+            });
+
+            messageInput.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    if (sendButton.style.pointerEvents !== 'none') {
+                        sendButton.click();
+                    }
+                }
+            });
+        }
+        setupTextInput();
+
+        let nextAttachmentId = 0;
+        let attachmentDropBoxExpanded = false;
+
+        const MAX_ATTACHMENT_FILE_SIZE = 50 * 1024 * 1024; // 50 MB
+        const MAX_ATTACHMENT_FILE_COUNT = 3;
+
+        function setupAttachmentsInput() {
+            const attachmentBox = container.querySelector('#DLP_Attachment_Preview_Parent');
+            const attachmentBoxDrop = attachmentBox.querySelector('.DLP_Attachment_Box_Drop_1');
+
+            attachmentBoxDrop.addEventListener('dragenter', event => {
+                event.preventDefault();
+                //attachmentBoxDrop.style.outline = '2px solid rgba(var(--DLP-blue), 0.20)';
+                attachmentBoxDrop.firstElementChild.style.opacity = '1';
+            });
+
+            attachmentBoxDrop.addEventListener('dragleave', event => {
+                event.preventDefault();
+                if (attachmentBoxDrop.contains(event.relatedTarget)) return;
+                //attachmentBoxDrop.style.outline = '2px dashed rgba(var(--DLP-blue), 0.20)';
+                attachmentBoxDrop.firstElementChild.style.opacity = '0.5';
+            });
+
+            window.addEventListener('dragover', (event) => {
+                event.preventDefault();
+                if (attachmentInput.disabled) return;
+                if (event.dataTransfer && event.dataTransfer.types.includes('Files')) {
+                    if (attachmentBox.style.display === 'none') {
+                        attachmentBox.style.display = '';
+                    }
+                    [...attachmentBox.children].forEach(child => {
+                        if (child !== attachmentBoxDrop) {
+                            child.style.display = 'none';
+                        }
+                    });
+                    attachmentBoxDrop.style.display = '';
+                }
+            });
+
+            window.addEventListener('dragleave', (event) => {
+                if (event.clientX <= 0 || event.clientY <= 0 || event.clientX >= window.innerWidth || event.clientY >= window.innerHeight) {
+                    if (attachmentBox.children.length === 1 && attachmentBox.children[0] === attachmentBoxDrop) {
+                        attachmentBox.style.display = 'none';
+                    }
+                    [...attachmentBox.children].forEach(child => {
+                        if (child !== attachmentBoxDrop) {
+                            child.style.display = '';
+                        }
+                    });
+                    attachmentBoxDrop.style.display = 'none';
+                    //attachmentBoxDrop.style.outline = '2px dashed a(var(--DLP-blue), 0.20)';
+                    attachmentBoxDrop.firstElementChild.style.opacity = '0.5';
+                }
+            });
+
+            window.addEventListener('drop', (event) => {
+                event.preventDefault();
+                [...attachmentBox.children].forEach(child => {
+                    if (child !== attachmentBoxDrop) {
+                        child.style.display = '';
+                    }
+                });
+                attachmentBoxDrop.style.display = 'none';
+                //attachmentBoxDrop.style.outline = '2px dashed rgba(var(--DLP-blue), 0.20)';
+                attachmentBoxDrop.firstElementChild.style.opacity = '0.5';
+            });
+
+            attachmentBoxDrop.addEventListener('drop', (event) => {
+                event.preventDefault();
+                attachmentBoxDrop.style.display = 'none';
+
+                const selectedFiles = Array.from(event.dataTransfer.files);
+                triggerInputAttachments(selectedFiles);
+            });
+
+            attachmentVisualButton.addEventListener('click', () => attachmentInput.click());
+
+            attachmentInput.addEventListener('change', (event) => {
+                const selectedFiles = Array.from(event.target.files);
+                triggerInputAttachments(selectedFiles);
+            });
+        }
+        setupAttachmentsInput();
+
+        function triggerInputAttachments(selectedFiles) {
+            if (!allAttachments[currentChatId]) {
+                allAttachments[currentChatId] = [];
+            }
+            const validFiles = [];
+
+            selectedFiles.forEach(file => {
+                if (file.size > MAX_ATTACHMENT_FILE_SIZE) {
+                    showNotification("warning", "File Too Large", `${file.name} is over 10 MB, please choose a smaller file.`, 10);
+                } else {
+                    validFiles.push(file);
+                }
+            });
+
+            const remainingSlots = MAX_ATTACHMENT_FILE_COUNT - allAttachments[currentChatId]?.length;
+            if (validFiles.length > remainingSlots) {
+                showNotification("warning", "Too Many Files", `You can only attach up to ${MAX_ATTACHMENT_FILE_COUNT} files at once.`, 10);
+                validFiles.length = remainingSlots;
+            }
+
+            validFiles.forEach(file => {
+                allAttachments[currentChatId]?.push({ id: String(nextAttachmentId++), file }); // wrap each in an {id, file} and append
+            });
+
+            updateAttachmentsInput();
+            renderAttachmentsPreview();
+            checkSendButton();
+            attachmentInput.value = '';
+        }
+
+        function updateAttachmentsInput() {
+            const dt = new DataTransfer();
+            allAttachments[currentChatId]?.forEach(a => dt.items.add(a.file));
+            attachmentInput.files = dt.files;
+        }
+
+        function removeAttachmentById(id) {
+            allAttachments[currentChatId] = allAttachments[currentChatId]?.filter(a => a.id !== id);
+            updateAttachmentsInput();
+            renderAttachmentsPreview();
+            checkSendButton();
+        }
+
+        function renderAttachmentsPreview() {
+            const attachmentBox = container.querySelector('#DLP_Attachment_Preview_Parent');
+            const attachmentBoxDrop = attachmentBox.querySelector('.DLP_Attachment_Box_Drop_1');
+
+            const currentIds = new Set(allAttachments[currentChatId]?.map(a => a.id));
+
+            // 1) remove deleted attachments from the DOM
+            Array.from(attachmentBox.children).forEach(child => {
+                const childId = child.getAttribute('data-id');
+                if (!currentIds.has(childId) && child !== attachmentBoxDrop) {
+                    attachmentBox.removeChild(child);
+                }
+            });
+
+            // 2) add new attachments to the DOM
+            allAttachments[currentChatId]?.forEach(({ id, file }) => {
+                if (attachmentBox.querySelector(`[data-id="${id}"]`)) return;
+
+                const url = URL.createObjectURL(file);
+                const box = document.createElement('div');
+                box.className = 'DLP_Attachment_Box_1';
+                box.setAttribute('data-id', id);
+                box.style.position = 'relative';
+
+                let media;
+                if (file.type.startsWith('image/')) {
+                    media = document.createElement('img');
+                    media.src = url;
+                    media.className = 'DLP_Attachment_Box_1_Content';
+                } else if (file.type.startsWith('video/')) {
+                    media = document.createElement('video');
+                    media.src = url;
+                    media.autoplay = true;
+                    media.muted = true;
+                    media.loop = true;
+                    media.className = 'DLP_Attachment_Box_1_Content';
+                } else {
+                    media = document.createElement('div');
+                    media.style.display = 'flex';
+                    media.style.width = '100%';
+                    media.style.height = '100%';
+                    media.style.paddingTop = '6px';
+                    media.style.flexDirection = 'column';
+                    media.style.justifyContent = 'center';
+                    media.style.alignItems = 'center';
+                    media.style.gap = '6px';
+                    media.style.flexShrink = '0';
+
+                    mediaChild1 = document.createElement('p');
+                    mediaChild1.className = 'DLP_Text_Style_1 DLP_NoSelect';
+                    mediaChild1.style.fontSize = '24px';
+                    mediaChild1.textContent = '􀈸';
+                    media.appendChild(mediaChild1);
+
+                    mediaChild2 = document.createElement('p');
+                    mediaChild2.className = 'DLP_Text_Style_1 DLP_NoSelect';
+                    mediaChild2.style.opacity = '0.5';
+                    mediaChild2.textContent = 'File';
+                    //mediaChild2.textContent = file.name;
+                    media.appendChild(mediaChild2);
+                }
+
+                // Create and append delete button
+                const hover = document.createElement('div');
+                hover.className = 'DLP_Attachment_Box_1_Hover';
+                hover.style.display = 'none';
+                box.addEventListener('mouseenter', () => {
+                    hover.style.display = '';
+                });
+                box.addEventListener('mouseleave', () => {
+                    hover.style.display = 'none';
+                });
+                const btn = document.createElement('p');
+                btn.className = 'DLP_Text_Style_1 DLP_Magnetic_Hover_1 DLP_NoSelect';
+                if ((file.type.startsWith('image/') || file.type.startsWith('video/'))) btn.textContent = '􀻀';
+                else btn.textContent = '􀈸';
+                btn.addEventListener('click', () => removeAttachmentById(id));
+                hover.appendChild(btn);
+
+                box.appendChild(media);
+                box.appendChild(hover);
+                attachmentBox.appendChild(box);
+
+                if (false) {
+                    if (file.type.startsWith('image/')) {
+                        media.addEventListener('load', () => updateContrast(box));
+                        if (media.complete) updateContrast(box);
+                    } else if (file.type.startsWith('video/')) {
+                        media.addEventListener('loadeddata', () => {
+                            const iv = setInterval(() => {
+                                if (!document.contains(media)) {
+                                    clearInterval(iv);
+                                } else {
+                                    updateContrast(box);
+                                }
+                            }, 250);
+                            updateContrast(box);
+                        });
+                    } else {
+                        updateContrast(box);
+                    }
+                }
+            });
+
+            // Show or hide the attachmentBox and adjust padding/navigation
+            if ((allAttachments[currentChatId]?.length ?? 0) === 0 && attachmentDropBoxExpanded) {
+                attachmentBox.style.display = 'none';
+                attachmentDropBoxExpanded = false;
+                chatBox.scrollTop = chatBox.scrollHeight;
+                //const nav = document.querySelector('#DLP_Main_Navigation_Box_5_ID .DLP_Col.DLP_Fill_Col.DLP_Fill_Row.DLP_Gap_8');
+                //nav.style.paddingBottom = `${parseFloat(getComputedStyle(nav).paddingBottom) - 104}px`;
+            } else if (allAttachments[currentChatId]?.length > 0 && !attachmentDropBoxExpanded) {
+                attachmentBox.style.display = '';
+                attachmentDropBoxExpanded = true;
+                chatBox.scrollTop = chatBox.scrollHeight;
+                //const nav = document.querySelector('#DLP_Main_Navigation_Box_5_ID .DLP_Col.DLP_Fill_Col.DLP_Fill_Row.DLP_Gap_8');
+                //nav.style.paddingBottom = `${parseFloat(getComputedStyle(nav).paddingBottom) + 104}px`;
+                //void container.offsetHeight;
+                //document.querySelector('#DLP_Main_Navigation_Box_5_ID').scrollTop += 104;
+            }
+
+            // Disable input if there are too many files
+            if (allAttachments[currentChatId]?.length >= MAX_ATTACHMENT_FILE_COUNT) {
+                attachmentInput.disabled = true;
+                attachmentVisualButton.style.opacity = '0.5';
+                attachmentVisualButton.style.pointerEvents = 'none';
+            } else {
+                attachmentInput.disabled = false;
+                attachmentVisualButton.style.opacity = '';
+                attachmentVisualButton.style.pointerEvents = '';
+            }
+
+        }
+
+        function setupCreateNewChatButton() {
+            let theButton = container.querySelector('#DLP_Inset_Group_2').querySelector('#DLP_Inset_Button_3_ID');
+            theButton.addEventListener('click', async () => {
+                theButton.style.opacity = "0.5";
+                theButton.style.pointerEvents = "none";
+                try {
+                    let response = await fetch(apiURL + "/chats/create", {
+                        method: "GET",
+                        headers: {
+                            "Authorization": `Bearer ${document.cookie.split(';').find(cookie => cookie.includes('jwt_token')).split('=')[1]}`
+                        }
+                    });
+
+                    let data = await response.json();
+                    console.log("Server Response:", data);
+                    storageLocal.chatKey = [data.chat_key];
+                    saveStorageLocal();
+
+                    chatBox.innerHTML = '';
+
+                    container.querySelector('#DLP_Inset_Group_1').style.display = "";
+                    container.querySelector('#DLP_Inset_Group_2').style.display = "none";
+
+                    theButton.style.opacity = "";
+                    theButton.style.pointerEvents = "";
+                } catch (error) {
+                    console.error("Fetch error:", error);
+                    theButton.style.opacity = "";
+                    theButton.style.pointerEvents = "";
+                }
+            });
+        }
+        setupCreateNewChatButton();
+
+        function checkSendButton() {
+            if (messageInput.value.trim() !== "" || allAttachments[currentChatId]?.length > 0) {
+                sendButton.style.opacity = "";
+                sendButton.style.pointerEvents = "";
+            } else {
+                sendButton.style.opacity = "0.5";
+                sendButton.style.pointerEvents = "none";
+            }
+        }
+        checkSendButton();
+    }
+    setupSupportPage();
+
+
+
+
+
+
+
+
+
 
     const originalPlay = HTMLAudioElement.prototype.play;
     function muteTab(value) {
@@ -4936,8 +6326,7 @@ function One() {
             '[data-test="story-start"]',
             '._3bBpU._1x5JY._1M9iF._36g4N._2YF0P.T7I0c._2EnxW.MYehf',
             '._2V6ug._1ursp._7jW2t._28UWu._3h0lA._1S2uf._1E9sc', // No Thanks Legendary Button
-            '._1rcV8._1VYyp._1ursp._7jW2t._1gKir', // Language Score
-            '_2V6ug _1ursp _7jW2t _2x7Co _3fo6Q' // Can't Speak Now
+            '._1rcV8._1VYyp._1ursp._7jW2t._1gKir' // Language Score
         ];
         selectorsForSkip.forEach(selector => {
             const element = document.querySelector(selector);
