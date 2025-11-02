@@ -74,13 +74,19 @@ If you encounter issues:
 ![Duolingo Pro - ](./assets/readme/2.jpeg)
 ![Duolingo Pro - ](./assets/readme/3.jpeg)
 ![Duolingo Pro - ](./assets/readme/4.jpeg)
-![Duolingo Pro - ](./assets/readme/5.jpeg)
+![Duolingo Pro - ](./assets/readme/B1.jpeg)
 ![Duolingo Pro - Solving a question](./assets/readme/11.jpeg)
 ![Duolingo Pro - Solving a question](./assets/readme/12.jpeg)
 ![Duolingo Pro - Solving a question](./assets/readme/13.jpeg)
 ![Duolingo Pro - Solving a question](./assets/readme/14.jpeg)
 ![Duolingo Pro - Solving a question](./assets/readme/15.jpeg)
 ![Duolingo Pro - Solving a question](./assets/readme/16.jpeg)
+![Duolingo Pro - Solving a question](./assets/readme/17.jpeg)
+![Duolingo Pro - Solving a question](./assets/readme/18.jpeg)
+![Duolingo Pro - Solving a question](./assets/readme/19.jpeg)
+![Duolingo Pro - Solving a question](./assets/readme/20.jpeg)
+![Duolingo Pro - Solving a question](./assets/readme/21.jpeg)
+![Duolingo Pro - Solving a question](./assets/readme/22.jpeg)
 
 ---
 
