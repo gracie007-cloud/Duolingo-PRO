@@ -31,13 +31,13 @@
 
 ## Features
 
-- 🎯 Instantly earn as much XP as you want
-- 💎 Get as much free gems as you want
+- 🎯 Instantly earn XP
+- 💎 Get free gems
+- 🔥 Boost your streak
 - 🤖 Automatically solve questions
-- 🔄 Auto-complete lessons and practices (choose set or infinite runs)
-- 🔥 Boost your streak by any amount
 - 🚀 Free XP boosts and streak freezes
 - ❤️ Instantly refill hearts
+- 🔄 Auto-complete lessons and practices (choose set or infinite runs)
 - 🌙 Dark mode support
 - 📝 Talk with support directly on the script
 - 🛠️ More features coming soon (e.g., AutoServer)
